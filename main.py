@@ -11,9 +11,11 @@ TELEGRAM_API_TOKEN = "6088899662:AAGP8lQ9GixY3UVjmMwK4idtZBnCY030lSE"
 # Initialize the Telegram Bot
 bot = telegram.Bot(token=TELEGRAM_API_TOKEN)
 
+
 @app.route('/')
 def index():
-    return jsonify({"Choo Choo": "Welcome to your Flask app 🚅"})
+    return jsonify({"Working :)})
+
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
@@ -27,6 +29,7 @@ def webhook():
         bot.send_message(chat_id=user_id, text=response_text)
 
     return 'OK'
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=os.getenv("PORT", default=5000))
