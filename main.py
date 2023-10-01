@@ -12,13 +12,13 @@ TELEGRAM_API_TOKEN = "6088899662:AAGP8lQ9GixY3UVjmMwK4idtZBnCY030lSE"
 bot = telegram.Bot(token=TELEGRAM_API_TOKEN)
 
 
-@app.route('/')
+@app.route('/hehe')
 def index():
     return "Working...."
 
 
 
-@app.route('/webhook', methods=['POST'])
+@app.route('/', methods=['POST'])
 def webhook():
     update = telegram.Update.de_json(request.get_json(force=True), bot)
     if update.message:
