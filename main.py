@@ -14,7 +14,7 @@ bot = telegram.Bot(token=TELEGRAM_API_TOKEN)
 
 @app.route('/')
 def index():
-    return jsonify({"Working..."})
+    return jsonify({"Working...."})
 
 
 @app.route('/webhook', methods=['POST'])
